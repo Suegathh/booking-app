@@ -1,0 +1,72 @@
+###
+GET http://localhost:5000/api/rooms
+
+###
+POST http://localhost:5000/api/rooms
+Content-Type: application/json
+
+{
+  "name": "Deluxe Room 2",
+  "price": 150,
+  "desc": "A luxurious room with a beautiful view.",
+  "roomNumbers": [
+    {
+      "number": 101,
+      "unavailableDates": ["2025-01-01", "2025-01-02"]
+    },
+    {
+      "number": 102,
+      "unavailableDates": ["2025-01-03", "2025-01-04"]
+    }
+  ]
+}
+
+###
+GET http://localhost:5000/api/rooms/677d25a777c18043cb4e25da
+
+###
+PUT http://localhost:5000/api/rooms/677d25a777c18043cb4e25da
+Content-Type: application/json
+
+{
+  "name": "Coasta Rica",
+  "price": 10000
+}
+
+###
+DELETE http://localhost:5000/api/rooms/677d25a777c18043cb4e25da
+
+// Get bookings
+###
+GET http://localhost:5000/api/bookings
+
+// Create booking
+###
+POST http://localhost:5000/api/bookings
+Content-Type: application/json
+
+{
+  "roomId": "677d25f077c18043cb4e25de",
+  "name": "Duncan",
+  "email": "sue@gmail.com",
+  "checkInDate": "2024-02-10",
+  "checkOutDate": "2024-02-18"
+}
+
+//update
+###
+PUT http://localhost:5000/api/bookings/677d40e1a624a79076cb3d21
+Content-Type: application/json
+
+{
+  "name": "Kimani",
+  "email": "kimani@gmail.com"
+}
+
+//delete
+###
+DELETE http://localhost:5000/api/bookings/677d40e1a624a79076cb3d21
+
+//single booking
+###
+GET http://localhost:5000/api/bookings/677d25f077c18043cb4e25de
