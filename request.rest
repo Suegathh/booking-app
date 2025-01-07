@@ -1,6 +1,7 @@
 ###
 GET http://localhost:5000/api/rooms
 
+//create room
 ###
 POST http://localhost:5000/api/rooms
 Content-Type: application/json
@@ -70,3 +71,36 @@ DELETE http://localhost:5000/api/bookings/677d40e1a624a79076cb3d21
 //single booking
 ###
 GET http://localhost:5000/api/bookings/677d25f077c18043cb4e25de
+
+
+#get user
+###
+GET http://localhost:5000/api/user
+
+//create
+###
+POST http://localhost:5000/api/user/create
+Content-Type: application/json
+
+{
+    "name": "zohn voe",
+    "email": "zohn.voe@example.com",
+    "password": "securepassword123"
+}
+//login
+###
+POST http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{
+  "email" : "dohn.voe@example.com",
+  "password": "securepassword123"
+}
+
+//logout
+###
+http://localhost:5000/api/user/logout
+
+//check auth
+###
+GET http://localhost:5000/auth
