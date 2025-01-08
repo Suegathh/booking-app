@@ -18,7 +18,6 @@ app.use(cookieParser());
 app.use(express.json());
 
 // Routes
-app.use("/auth", auth);
 app.use('/api/rooms', roomRoute);
 app.use('/api/bookings', bookingRoute);
 app.use('/api/user', userRoute);
